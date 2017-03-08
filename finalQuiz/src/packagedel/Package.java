@@ -1,15 +1,20 @@
 package packagedel;
 
+import java.util.Date;
+
+/*
+ * This is the Package class, it is a POJO class for the Project. 
+ */
 
 public class Package {
 
 	private String location;
-	private double km;
-	private double merchendiseValue;
-	private String deliveryDate;
+	private int km;
+	private int merchendiseValue;
+	private Date deliveryDate;
 
-	public Package(String location, double km, double merchendiseValue,
-			String deliveryDate) {
+	public Package(String location, int km, int merchendiseValue,
+			Date deliveryDate) {
 		super();
 		this.location = location;
 		this.km = km;
@@ -25,27 +30,27 @@ public class Package {
 		this.location = location;
 	}
 
-	public double getKm() {
+	public int getKm() {
 		return km;
 	}
 
-	public void setKm(double km) {
+	public void setKm(int km) {
 		this.km = km;
 	}
 
-	public double getMerchendiseValue() {
+	public int getMerchendiseValue() {
 		return merchendiseValue;
 	}
 
-	public void setMerchendiseValue(double merchendiseValue) {
+	public void setMerchendiseValue(int merchendiseValue) {
 		this.merchendiseValue = merchendiseValue;
 	}
 
-	public String getDeliveryDate() {
+	public Date getDeliveryDate() {
 		return deliveryDate;
 	}
 
-	public void setDeliveryDate(String deliveryDate) {
+	public void setDeliveryDate(Date deliveryDate) {
 		this.deliveryDate = deliveryDate;
 	}
 

@@ -1,27 +1,37 @@
 package packagedel;
 
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
+/*
+ * This is the main class.
+ */
 public class Main {
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws ParseException {
 
-		Sorter so = new Sorter();
+		SimpleDateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+		Distributor dst = new Distributor();
 
 		List<Package> packageList = new ArrayList<>();
-		
-		packageList.add(new Package("Cluj", 25, 120, "27/02/2017"));
-		packageList.add(new Package("Cluj", 25, 300, "27/02/2017"));
-		packageList.add(new Package("Bucuresti", 200, 1000, "28/02/2017"));
-		packageList.add(new Package("Iasi", 340, 400, "28/02/2017"));
-		packageList.add(new Package("Cluj", 25, 50, "25/02/2017"));
-		packageList.add(new Package("Iasi", 340, 120, "27/02/2017"));
-		packageList.add(new Package("Iasi", 340, 700, "28/02/2017"));
-		packageList.add(new Package("Cluj", 25, 70, "25/02/2017"));
-		packageList.add(new Package("Bucuresti", 200, 220, "28/02/2017"));
-		packageList.add(new Package("Cluj", 25, 140, "25/02/2017"));
 
+		packageList.add(new Package("Cluj", 25, 120, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Dej", 30, 55, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Turda", 28, 78, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Cluj", 25, 150, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Turda", 28, 92, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Cluj", 25, 22, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Cluj", 25, 43, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Dej", 30, 254, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Dej", 30, 134, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Turda", 28, 26, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Turda", 28, 144, sdf.parse("02/27/2017")));
+		packageList.add(new Package("Cluj", 25, 154, sdf.parse("02/27/2017")));
+
+		dst.setPackageList(packageList);
+		dst.startDelivery();
 
 	}
 
